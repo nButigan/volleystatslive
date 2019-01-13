@@ -1,7 +1,55 @@
 <?php
 
-
 session_start();
+require 'config.php';
+
+    $servername = "localhost";
+    $username = "id7774308_users_login";
+    $password = "k7i7k9o7";
+    $dbname = "id7774308_korisnici_prijava";
+
+ $db = mysqli_connect('localhost', 'id7774308_users_login', 'k7i7k9o7', 'id7774308_korisnici_prijava');
+ 
+ if (!$db) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+  
+  if (isset($_POST['save'])) 
+     {
+		$korisnickoIme = $_POST['korisnickoIme'];
+		$lozinka = $_POST['lozinka'];
+		
+		sql = " SELECT korisnickoIme,lozinka,korisnik_uloga FROM korisnik ";
+		$result = mysqli_query($db, $sql);
+
+       if (mysqli_num_rows($result)) 
+	   {
+		 
+			$_SESSION['korisnickoIme'] = $korisnik['korisnickoIme'];
+			$_SESSION['lozinka'] = $korisnik['lozinka'];
+			$_SESSION['korisnik_uloga'] = $korisnik['korisnik_uloga'];
+			if($_SESSION['korisnik_uloga']=='2')
+				{
+					$_SESSION['poruka_prijava'] = 'Uspješno ste prijavljeni!';
+					header('Location: admin.php');
+					exit();
+				}
+ 			
+ 			else($_SESSION['korisnik_uloga']=='3')
+ 				{
+ 					$_SESSION['poruka_prijava'] = 'Uspješno ste prijavljeni!';
+ 					header('Location: welcome.php');
+ 					exit();
+ 				}
+		
+       }
+       else 
+	   {		   
+		$_SESSION['poruka_prijava'] = 'Neispravno korisničko ime i/ili lozinka.';
+	        header('Location: prijava1.php');
+		exit();		   
+	   }
+/*session_start();
 require 'config.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -79,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		http_response_code(500);
 		die($e->getMessage());
 	}
-} 
+}*/
 /*
 	catch(PDOException $e)
 	{
