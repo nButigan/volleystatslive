@@ -1,6 +1,6 @@
-<?php
+/*<?php
 
-session_start();
+/*session_start();
 
     $servername = "localhost";
     $username = "id7774308_users_login";
@@ -48,7 +48,8 @@ session_start();
 	        header('Location: prijava1.php');
 		exit();		   
 	   }
-/*session_start();
+	  */
+session_start();
 require 'config.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -126,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		http_response_code(500);
 		die($e->getMessage());
 	}
-}*/
+}
 /*
 	catch(PDOException $e)
 	{
