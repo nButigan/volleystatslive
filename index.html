@@ -15,23 +15,61 @@
                 <nav>
                     <ul>
                         <li class="current"><a href="index.html">Naslovnica</a></li>
-                        <li><a href="stats.html">Statistika</a></li>
-                        <li><a href="livestats.html">Uživo</a></li>
-                        <li><a href="prijava.html">Prijava</a></li>
+                        <li><a href="stats1.php">Statistika</a></li>
+                        <li><a href="prijava1.php">Prijava</a></li>
                         <li><a href="vizija.html">Vizija</a></li>
                     </ul>
                 </nav>
              </div>
         </header>
         
-        <section id="showcase">
-            <div class="container">
-                <h1>Od sada u svakom trenutku s vama</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra ipsum arcu, sed euismod felis pharetra non. Nulla malesuada diam quis libero ultrices tincidunt.</p>
-            </div>
-        </section>
-        
-        
+		
+		
+		
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <img src="https://i.ytimg.com/vi/h_QyTcPD1G4/maxresdefault.jpg" style="width:100%">
+  </div>
+
+<div class="mySlides fade">  
+  <img src="https://i.ytimg.com/vi/uZHt4Wh4HS8/maxresdefault.jpg" style="width:100%"> 
+</div>
+
+<div class="mySlides fade"> 
+  <img src="https://images.sidearmsports.com/sidearm.sites/appstate.sidearmsports.com/images/2017/12/21/Porter_transfer.jpg" style="width:100%"> 
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>	  
+		
         <section id="boxes">
             <div class="container">
                 <div class="box">
@@ -47,11 +85,33 @@
                 <div class="box">
                     <img src="logo_brush.png">
                     <h3>Graphic Design </h3>
-                    <p>Aliquam sodales dictum libero, id ultrices sapien tempor sit amet</p>
+                    <p>Graphic design is the process of visual communication and problem-solving through the use of typography, photography and illustration.</p>
                 </div>
             </div>
         </section>
+        <section id="boxes">
+        	<div class="container">
+        	<div class="box">
+                    <img src="php1.jpg">
+                    <h3>PHP</h3>
+                    <p>PHP je skriptni jezik koji se izvršava na serverskoj strani namjenjen razvoju web stranica.</p>
+                </div>
+				<div class="box">
+                    <img src="bootstrap.png">
+                    <h3>Bootstrap</h3>
+                    <p>Bootstrap is a free and open-source front-end Web framework.</p>
+                </div>
+				<div class="box">
+                    <img src="jquery-image.png">
+                    <h3>jQuery</h3>
+                    <p>jQuery je mala javascript bibliotekakoja olakšava i ubrzava pisanje koda.</p>
+                </div>
+               </div>
+           </section>
         <footer>
+            <a href="https://github.com/nButigan/volleystatslive"><img src="git.png" alt="git" style="float:left;width:69px;height:69px;border:10px;"></a>
+            <a href="https://drive.google.com/drive/folders/1qQt1093EI5e-4UI0gDlUgbsVS-ZenMNl"><img src="laravel.png" alt="laravel" style="float:left;width:69px;height:69px;border:10px;"></a>
+			<a href="https://www.flickr.com/photos/156715853@N05/"><img src="codeacademy.jpg" alt="codeacademy" style="float:left;width:69px;height:69px;border:10px;"></a>
             <p>VolleyStatsLive, Copyright &copy; 2018</p>
         </footer>
     </body>
